@@ -1,6 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Faker from "faker";
 
 class App extends React.Component {
   constructor(props) {
@@ -24,17 +23,13 @@ class App extends React.Component {
     );
   }
   render() {
-    return (
-      <div>
-        <img src={Faker.image.avatar()} alt="Avatar" />
-
-        <div>
-          Latitude: {this.state.lat}
-          <br />
-          Error: {this.state.errMessg}
-        </div>
-      </div>
-    );
+    if (this.state.errMessg && !this.state.lat) {
+      return <div>Error: {this.state.errMessg}</div>;
+    } else if (!this.state.errMessg && this.state.lat) {
+      return <div>Latitude: {this.state.lat}</div>;
+    } else {
+      return <div>Loading !</div>;
+    }
   }
 }
 
