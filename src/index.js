@@ -1,10 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Location from "./Location";
+import Button from "./Buttons";
 
 class App extends React.Component {
   render() {
-    return <Location />;
+    return (
+      <div>
+        <Location />
+        <Button />
+      </div>
+    );
   }
 }
 
