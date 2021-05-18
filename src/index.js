@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import Buttons from "./Buttons";
 import Location from "./Location";
 
 class App extends React.Component {
@@ -7,6 +8,7 @@ class App extends React.Component {
     return (
       <div>
         <Location />
+        <Buttons />
       </div>
     );
   }

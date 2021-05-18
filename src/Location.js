@@ -1,5 +1,6 @@
 import React from "react";
 import SeasonDisplay from "./SeasonDisplay";
+import LoadingAni from "./LoadingAni";
 
 export default class extends React.Component {
   constructor(props) {
@@ -39,7 +40,7 @@ export default class extends React.Component {
     } else if (!this.state.errMessg && this.state.lat) {
       return <SeasonDisplay lat={this.state.lat} />;
     } else {
-      return <div>Loading !</div>;
+      return <LoadingAni message="Give location acess." />;
     }
   }
 }
